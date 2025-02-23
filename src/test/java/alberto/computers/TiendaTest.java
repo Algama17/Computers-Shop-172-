@@ -31,8 +31,9 @@ public class TiendaTest {
         boolean eliminado = tienda.eliminarOrdenadorPorMarca("Dell");
         assertTrue(eliminado, "No se pudo eliminar el ordenador con marca 'Dell'.");
         assertNull(tienda.buscarOrdenadorPorMarca("Dell"), "El ordenador no fue eliminado correctamente.");
-        
+
         boolean noEliminado = tienda.eliminarOrdenadorPorMarca("MacBook");
         assertFalse(noEliminado, "Se eliminó un ordenador inexistente.");
     }
+    
 }
