@@ -18,4 +18,15 @@ public class Ordenador {
     public String getMarca() {
         return marca;
     }
+
+    @Override
+    public String toString() {
+        return "Ordenador{" +
+                "marca='" + marca + '\'' +
+                ", memoria=" + memoria + "GB" +
+                ", procesador='" + procesador + '\'' +
+                ", sistemaOperativo='" + sistemaOperativo + '\'' +
+                ", precio=" + precio + "$" +
+                '}';
+    }
 }
