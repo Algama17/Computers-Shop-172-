@@ -15,5 +15,9 @@ public class TiendaTest {
         ordenador = new Ordenador("Dell", 16, "Intel i7", "Windows 11", 1200.0);
     }
 
-
+    @Test
+    void testAgregarOrdenador() {
+        tienda.agregarOrdenador(ordenador);
+        assertNotNull(tienda.buscarOrdenadorPorMarca("Dell"), "El ordenador no fue agregado correctamente.");
+    }
 }
