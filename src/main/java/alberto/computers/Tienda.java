@@ -25,5 +25,16 @@ public class Tienda {
         ordenadores.add(ordenador);
     }
 
+    public boolean eliminarOrdenadorPorMarca(String marca) {
+        return ordenadores.removeIf(ordenador -> ordenador.getMarca().equalsIgnoreCase(marca));
+    }
 
+    public Ordenador buscarOrdenadorPorMarca(String marca) {
+        for (Ordenador ordenador : ordenadores) {
+            if (ordenador.getMarca().equalsIgnoreCase(marca)) {
+                return ordenador;
+            }
+        }
+        return null;
+    }
 }
