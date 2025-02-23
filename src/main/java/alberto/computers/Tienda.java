@@ -16,4 +16,8 @@ public class Tienda {
         this.identificadorTributario = identificadorTributario;
         this.ordenadores = new ArrayList<>();
     }
+
+    public void agregarOrdenador(Ordenador ordenador) {
+        ordenadores.add(ordenador);
+    }
 }
