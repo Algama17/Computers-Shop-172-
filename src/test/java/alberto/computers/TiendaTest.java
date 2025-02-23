@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -46,5 +48,14 @@ public class TiendaTest {
 
         Ordenador noEncontrado = tienda.buscarOrdenadorPorMarca("MacBook");
         assertNull(noEncontrado, "Se encontró un ordenador inexistente.");
+    }
+
+     @Test
+    void testListarOrdenadores() {
+        tienda.agregarOrdenador(ordenador);
+
+        List<Ordenador> ordenadores = tienda.listarOrdenadores();
+        assertNotNull(ordenadores, "La lista de ordenadores está vacía.");
+        assertEquals(2, ordenadores.size(), "La cantidad de ordenadores listados no coincide.");
     }
 }
