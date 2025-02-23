@@ -1,5 +1,6 @@
 package alberto.computers;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -35,5 +36,15 @@ public class TiendaTest {
         boolean noEliminado = tienda.eliminarOrdenadorPorMarca("MacBook");
         assertFalse(noEliminado, "Se eliminó un ordenador inexistente.");
     }
-    
+
+    void testBuscarOrdenadorPorMarca() {
+        tienda.agregarOrdenador(ordenador);
+
+        Ordenador encontrado = tienda.buscarOrdenadorPorMarca("Dell");
+        assertNotNull(encontrado, "No se encontró el ordenador con marca 'Dell'.");
+        assertEquals("Dell", encontrado.getMarca(), "La marca del ordenador encontrado no coincide.");
+
+        Ordenador noEncontrado = tienda.buscarOrdenadorPorMarca("MacBook");
+        assertNull(noEncontrado, "Se encontró un ordenador inexistente.");
+    }
 }
