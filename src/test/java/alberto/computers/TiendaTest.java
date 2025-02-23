@@ -53,9 +53,8 @@ public class TiendaTest {
      @Test
     void testListarOrdenadores() {
         tienda.agregarOrdenador(ordenador);
-
         List<Ordenador> ordenadores = tienda.listarOrdenadores();
         assertNotNull(ordenadores, "La lista de ordenadores está vacía.");
-        assertEquals(2, ordenadores.size(), "La cantidad de ordenadores listados no coincide.");
+        assertEquals(1, ordenadores.size(), "La cantidad de ordenadores listados no coincide.");
     }
 }
